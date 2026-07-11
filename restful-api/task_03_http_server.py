@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """A simple API built with Python's http.server module."""
+
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -39,10 +40,10 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode("utf-8"))
 
         else:
-    self.send_response(404)
-    self.send_header("Content-type", "text/plain")
-    self.end_headers()
-    self.wfile.write(b"Endpoint not found")
+            self.send_response(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
 
 
 def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
