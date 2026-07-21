@@ -1,1 +1,1 @@
-show databases;
+show databases; --show the list of databases
